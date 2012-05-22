@@ -42,6 +42,11 @@ module SimpleCov
       merge_full coverage_full
     end
 
+    def self.extract_and_report context
+      extract context
+      report_and_clear
+    end
+
     def self.convert_v8(value)
       if value.is_a?(V8::Array)
         result = []
